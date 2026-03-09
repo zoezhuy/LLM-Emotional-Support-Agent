@@ -49,7 +49,7 @@ export default function LandingPage() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-4">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Build a better mood with Mood Builder
+                  Build a better mood with LLM Emotional Support Agent
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Track your moods, identify patterns, and get personalized suggestions to improve your mental
