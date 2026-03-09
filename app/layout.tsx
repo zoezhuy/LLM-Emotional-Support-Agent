@@ -7,7 +7,7 @@ import { AuthProvider } from "@/contexts/auth-context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Mood Builder",
+  title: "LLM Emotional Support Agent",
   description: "Track your mood and get personalized suggestions",
     generator: 'v0.dev'
 }
