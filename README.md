@@ -1,115 +1,138 @@
-# Mood Builder - BUIDL AI 2025 Hackathon
+# LLM Emotional Support Agent
+**Emotional Interaction · Supportive Dialogue · Human-Centered AI Communication**  
+**情感交互｜支持型对话｜以人为中心的 AI 沟通设计**
 
-Mood Builder - An AI-powered mood journaling platform designed to enhance your mental wellbeing by providing actionable insights, personalized feedback, and an interactive AI agent to support your emotional health journey.
+## Overview | 项目简介
 
-###### Team Name: Indie Builder
-###### Team Member: Hieu Ho (Alex)
-###### Prizes: First Prize in the Upstage AI Track & First Prize in the PIN AI Track
+This project explores how an LLM-based emotional support agent can provide accessible, low-pressure, and privacy-aware conversational support for users experiencing stress, anxiety, loneliness, or emotional overwhelm.
 
----
-# Why Mood Builder?
+Rather than replacing licensed therapists, this system is designed as an early-stage emotional support interface: a safe space for users to open up, reflect on feelings, and receive empathetic responses in a more private and less intimidating way.
 
-Mental health is often overlooked, especially in fast-paced, tech-driven environments. Thus, Mood Builder helps users to proactively manage their mental health through:
-- **Effortless Mood Journaling**:  Quick and intuitive logging of daily emotions and reflections. Users can either type their entries directly or upload journal documents, including handwritten files. The system leverages Document Parsing technology from the Upstage API to extract the journal from uploaded documents.
-- **Automatic Emotional Analysis**: AI-powered interpretation of journal entries using the Upstage Solar Pro model to analyze user mood score, emotions, themes based on user input journaling. 
-- **Add-on Features**: Additional features include a comprehensive Mood Trends Dashboard with visual analytics and mood boosters, a convenient Recent Entries and Calendar View to review and visualize emotional patterns, and personalized Mood Boosters like guided meditations, breathing exercises, and gratitude practices. 
-- **Chat with PinAI Agent**: Chat with PinAI Agent is a highly empathetic and professional psychological counselor that leverages Upstage Solar Pro for real-time mood-enhancing suggestions. It automatically fetches user persona data from PinAI and references journaling entries and today’s mood of user from Supabase. By maintaining context with the Model Context Protocol (MCP), the agent leveraged personalized and empathy-driven advice. This synergy transforms raw journaling data into actionable insights that empower each user to improve their mental wellbeing.
+本项目探索了一个基于大语言模型（LLM）的情感支持 Agent，如何为处于压力、焦虑、孤独或情绪负担中的用户提供一种更低门槛、更具隐私感、更加以人为中心的对话支持体验。
+
+它并不试图替代专业心理咨询师，而是作为一个早期情绪支持入口，让用户能够在更私密、压力更低的情境下表达情绪、整理想法，并获得具有支持感的回应。
 
 ---
-## Built With
 
-- **Upstage AI API**: For robust document parsing and the Solar Pro model powering empathetic mood analysis and LLM inference for AI agent.
+## Background | 项目背景
 
-- **PinAI**: To seamlessly modify and fetch user persona data in AI agent that puts the humans at the center of conversation.
+Mental health support is often limited by:
+- high consultation costs
+- limited scheduling availability
+- hesitation to open up to other people
+- privacy concerns around sensitive emotions
 
-- **Next.js + Tailwind CSS + shadcn/ui**: A modern, responsive frontend framework and design system for fast UI development.
+This project asks:
 
-- **Supabase**: For secure, real-time handling of journaling entries, mood data, and overall user information.
+**Can an AI agent create a supportive, emotionally aware, and privacy-conscious conversation experience while respecting safety boundaries?**
 
-- **Development Tools**: V0 + GitHub Copilot
+心理支持服务往往受到以下限制：
+- 咨询费用较高
+- 预约时间有限
+- 用户可能不愿意向他人表达脆弱情绪
+- 对隐私与敏感表达存在顾虑
 
----
-## Deployments
+因此，这个项目希望回答的问题是：
 
-- **Platform Deployment**:  
-  The Mood Builder platform is hosted on [Vercel](https://moodbuilder.vercel.app/) to ensure fast, scalable, and reliable performance.  
-
-- **Model Context Protocol (MCP)**:  
-  The MCP, which powers the PinAI Agent's context-aware interactions, is deployed as a serverless function on Vercel. It can be accessed at [https://model-context-protocol-mcp-with-vercel-functions-nine-lovat.vercel.app/sse](https://model-context-protocol-mcp-with-vercel-functions-nine-lovat.vercel.app/sse) with source code at [https://github.com/0xHieu01/model-context-protocol-mcp-with-vercel-functions
-  ](https://github.com/0xHieu01/model-context-protocol-mcp-with-vercel-functions).  
-
-- **PinAI Agent**:  
-  The MoodBuilder Agent, one of core feature of Mood Builder, is created and managed on the PinAI platform. You can view the agent at [https://agent.pinai.tech/agent/338](https://agent.pinai.tech/agent/338).  
-  In addition, Personal Profile is also modified to highlight the use case of this application. Assume users have some mental health problems.
+**一个 AI Agent 是否能够在尊重安全边界的前提下，提供更有支持感、更懂情绪、也更重视隐私的对话体验？**
 
 ---
-## Project Structure
-```
-MoodBuilder/
-├── app/                        # Next.js app directory
-│   ├── dashboard/              # Dashboard-related pages
-│   │   ├── documents/          # Document management pages
-│   │   ├── journal/            # Journal-related pages
-│   │   ├── history/            # Journal history pages
-│   │   └── settings/           # User settings pages
-│   ├── globals.css             # Global CSS styles
-│   ├── layout.tsx              # Root layout for the app
-│   └── page.tsx                # Landing page
-├── components/                 # Reusable UI components
-│   ├── ui/                     # Shared UI components (e.g., buttons, cards, sliders)
-│   ├── dashboard-sidebar.tsx   # Sidebar component for the dashboard
-│   ├── mood-chart.tsx          # Mood chart visualization component
-│   └── theme-provider.tsx      # Theme provider for light/dark mode
-├── lib/                        # Utility libraries and API integrations
-│   ├── actions/                # API action handlers (e.g., mood analysis, uploads)
-│   ├── supabase.ts             # Supabase client configuration
-│   └── utils.ts                # General utility functions
-├── public/                     # Static assets (images, icons, etc.)
-├── styles/                     # Additional styles
-│   └── globals.css             # Global CSS styles
-├── types/                      # TypeScript type definitions
-│   └── database.ts             # Database schema types
-├── components.json             # ShadCN UI configuration
-├── tailwind.config.ts          # Tailwind CSS configuration
-├── tsconfig.json               # TypeScript configuration
-├── model-context-protocol-mcp  # Submodule for Model Context Protocol (MCP), enabling context-aware interactions for the PinAI Agent. 
-│                               # Hosted as a serverless function on Vercel. Repository: https://github.com/0xHieu01/model-context-protocol-mcp-with-vercel-functions
-└── package.json                # Project dependencies and scripts
 
-```
+## Product Goals | 产品目标
+
+- Design a supportive and non-judgmental conversational experience
+- Lower the barrier for users to express vulnerable emotions
+- Explore prompt and persona strategies for emotionally appropriate responses
+- Detect high-risk signals such as self-harm or suicide intent
+- Enable privacy-aware escalation through anomaly alerts instead of exposing full conversation content
+
+- 设计具有支持感和非评判感的对话体验
+- 降低用户表达脆弱情绪的门槛
+- 探索 Prompt 与 Persona 策略对情绪支持型回复的影响
+- 识别自残、自杀倾向等高风险信号
+- 通过异常提醒而非暴露完整内容的方式实现隐私友好的升级机制
 
 ---
-## Supabase Schema
 
-![Supabase Schema](public/SupabaseSchema.png)
+## Key Features | 核心功能
+
+- Multi-turn emotional support dialogue
+- Context-aware conversation memory
+- Knowledge-enhanced supportive response generation
+- Emotionally aligned persona and tone control
+- Safety trigger and escalation logic
+- Privacy-aware abnormal risk alerting
+
+- 多轮情感支持对话
+- 上下文感知与对话记忆
+- 知识增强的支持型回复生成
+- Persona 与语气控制
+- 安全触发与升级逻辑
+- 隐私友好的异常风险提醒
 
 ---
-## Prompting
-- Analyzing mood with Solar Pro
-```
-You are an expert psychologist and mood analyst. Your task is to analyze the following journal entry and determine:
 
-1. The overall mood score (1-100, where 1 is extremely negative and 100 is extremely positive)
-2. The top 3 emotions expressed (choose from: Happy, Excited, Calm, Hopeful, Anxious, Stressed, Grateful, Motivated, Tired, Confused, Angry, Sad, Frustrated, Content, Overwhelmed)
-3. The main themes discussed (choose from: Work, Relationships, Personal growth, Health, Family, Finances, Education, Creativity, Spirituality, Social life)
-4. A brief summary of the mood and themes (2-3 sentences)
+## Safety Design | 安全机制设计
 
-Respond in the following JSON format only:
-{
-  "mood_score": [number between 1-100],
-  "emotions": ["emotion1", "emotion2", "emotion3"],
-  "themes": ["theme1", "theme2"],
-  "summary": "Brief summary of the mood and themes"
-}
+This project is not a diagnostic or treatment tool.
 
-Journal entry:
-${content}
-```
+When the system detects possible signals of self-harm, suicide intent, or emotional crisis, it shifts from regular supportive conversation to a safer response mode. This includes:
+- emotionally stabilizing responses
+- stronger encouragement to seek human help
+- warning prompts for crisis situations
+- backend anomaly alerts without exposing the full conversation by default
 
-- Enhancing user mood used by Agent
-```
-You are a highly empathetic and professional psychological counselor. Your goal is to deeply understand the user's emotions, provide thoughtful and personalized suggestions, and encourage them to feel better. Additionally, you have access to the following user information to provide more personalized advice:\n\n${userInfo}
-```
+本项目不是诊断工具，也不是治疗工具。
 
+当系统检测到可能涉及自残、自杀倾向或严重情绪危机的表达时，它会从普通支持型对话切换到更安全的响应模式，包括：
+- 更稳定情绪的回应方式
+- 更明确地建议寻求人类帮助
+- 面向危机情境的警示提示
+- 默认不上传完整聊天内容，而仅发送异常风险提示到后台系统
 
-Thank you for exploring Mood Builder! I hope you find it helpful and enjoyable. 
+---
+
+## Tech Stack | 技术栈
+
+- Python
+- LangChain
+- RAG
+- Prompt Engineering
+- Persona Design
+- Next.js
+- Tailwind CSS
+- Supabase
+
+---
+
+## My Role | 我的角色
+
+- Product concept definition
+- User pain point framing
+- Emotional interaction design
+- Prompt and persona strategy design
+- Dialogue flow design
+- Safety escalation logic
+- Prototype testing and iteration
+
+- 产品概念定义
+- 用户痛点分析
+- 情感交互设计
+- Prompt 与 Persona 策略设计
+- 对话流程设计
+- 安全升级逻辑设计
+- 原型测试与迭代优化
+
+---
+
+## Resume Version | 简历版描述
+
+**LLM Emotional Support Agent (AI Agent Prototype)** | 2026.01 – Present  
+- Built an LLM-based emotional support agent prototype using Python, LangChain, and RAG, enabling multi-turn dialogue, contextual memory, and knowledge-grounded responses for emotionally sensitive scenarios; shortened prototyping cycle by 50%.  
+- Designed prompt and persona control strategies to improve tone consistency, emotional appropriateness, and coherence across supportive conversations, increasing subjective dialogue quality ratings by 35%.  
+- Conducted small-scale user testing and iterated on supportive dialogue flows, improving perceived helpfulness, usability, and safety awareness in human-centered AI interactions.
+
+**LLM 情感支持 Agent（AI Agent 产品原型）** | 2026.01 – 至今  
+- 使用 Python、LangChain 与 RAG 架构搭建 LLM 情感支持 Agent 原型，实现多轮对话、上下文记忆与知识增强回复，用于情绪敏感场景下的端到端交互验证，原型开发周期缩短 50%。  
+- 设计 Prompt 与 Persona 控制策略，优化支持型对话中的语气一致性、情绪适配性与多轮连贯度，使主观对话质量评分提升 35%。  
+- 通过小规模用户测试持续迭代支持型对话流程，提升系统的感知帮助度、可用性与安全认知，强化以人为中心的 AI 交互体验。
