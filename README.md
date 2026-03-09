@@ -125,14 +125,3 @@ When the system detects possible signals of self-harm, suicide intent, or emotio
 
 ---
 
-## Resume Version | 简历版描述
-
-**LLM Emotional Support Agent (AI Agent Prototype)** | 2026.01 – Present  
-- Built an LLM-based emotional support agent prototype using Python, LangChain, and RAG, enabling multi-turn dialogue, contextual memory, and knowledge-grounded responses for emotionally sensitive scenarios; shortened prototyping cycle by 50%.  
-- Designed prompt and persona control strategies to improve tone consistency, emotional appropriateness, and coherence across supportive conversations, increasing subjective dialogue quality ratings by 35%.  
-- Conducted small-scale user testing and iterated on supportive dialogue flows, improving perceived helpfulness, usability, and safety awareness in human-centered AI interactions.
-
-**LLM 情感支持 Agent（AI Agent 产品原型）** | 2026.01 – 至今  
-- 使用 Python、LangChain 与 RAG 架构搭建 LLM 情感支持 Agent 原型，实现多轮对话、上下文记忆与知识增强回复，用于情绪敏感场景下的端到端交互验证，原型开发周期缩短 50%。  
-- 设计 Prompt 与 Persona 控制策略，优化支持型对话中的语气一致性、情绪适配性与多轮连贯度，使主观对话质量评分提升 35%。  
-- 通过小规模用户测试持续迭代支持型对话流程，提升系统的感知帮助度、可用性与安全认知，强化以人为中心的 AI 交互体验。
