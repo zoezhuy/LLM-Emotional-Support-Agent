@@ -1,127 +1,198 @@
-# LLM Emotional Support Agent
-**Emotional Interaction · Supportive Dialogue · Human-Centered AI Communication**  
-**情感交互｜支持型对话｜以人为中心的 AI 沟通设计**
+# LLM Emotional Support Agent（AI 情绪支持系统）
 
-## Overview | 项目简介
+> 一个基于大语言模型（LLM）的情绪支持 Agent 产品原型，探索更私密、更低门槛、更加以人为中心的情绪表达与支持性对话方式。
 
-This project explores how an LLM-based emotional support agent can provide accessible, low-pressure, and privacy-aware conversational support for users experiencing stress, anxiety, loneliness, or emotional overwhelm.
-
-Rather than replacing licensed therapists, this system is designed as an early-stage emotional support interface: a safe space for users to open up, reflect on feelings, and receive empathetic responses in a more private and less intimidating way.
-
-本项目探索了一个基于大语言模型（LLM）的情感支持 Agent，如何为处于压力、焦虑、孤独或情绪负担中的用户提供一种更低门槛、更具隐私感、更加以人为中心的对话支持体验。
-
-它并不试图替代专业心理咨询师，而是作为一个早期情绪支持入口，让用户能够在更私密、压力更低的情境下表达情绪、整理想法，并获得具有支持感的回应。
+![项目封面](./preview_image.jpg)
 
 ---
 
-## Background | 项目背景
+## 项目简介
 
-Mental health support is often limited by:
-- high consultation costs
-- limited scheduling availability
-- hesitation to open up to other people
-- privacy concerns around sensitive emotions
+LLM Emotional Support Agent 是一个面向情绪支持场景的 AI Agent 产品原型。  
+本项目关注的问题是：现实中的心理支持服务往往存在 **费用高、时间有限、隐私顾虑强、开口门槛高** 等问题，导致很多人在情绪低落、焦虑、压力过大时，缺乏一个能够及时表达与获得回应的安全空间。
 
-This project asks:
-
-**Can an AI agent create a supportive, emotionally aware, and privacy-conscious conversation experience while respecting safety boundaries?**
-
-心理支持服务往往受到以下限制：
-- 咨询费用较高
-- 预约时间有限
-- 用户可能不愿意向他人表达脆弱情绪
-- 对隐私与敏感表达存在顾虑
-
-因此，这个项目希望回答的问题是：
-
-**一个 AI Agent 是否能够在尊重安全边界的前提下，提供更有支持感、更懂情绪、也更重视隐私的对话体验？**
+因此，我希望探索一种更加私密、可随时访问、具备支持性回应能力的 AI 对话系统，让用户能够在更低心理负担的前提下进行情绪表达，并在必要时获得进一步的提醒与引导。
 
 ---
 
-## Product Goals | 产品目标
+## 项目背景
 
-- Design a supportive and non-judgmental conversational experience
-- Lower the barrier for users to express vulnerable emotions
-- Explore prompt and persona strategies for emotionally appropriate responses
-- Detect high-risk signals such as self-harm or suicide intent
-- Enable privacy-aware escalation through anomaly alerts instead of exposing full conversation content
+在真实生活中，很多用户并不是完全没有求助意愿，而是会受到以下因素影响：
 
-- 设计具有支持感和非评判感的对话体验
-- 降低用户表达脆弱情绪的门槛
-- 探索 Prompt 与 Persona 策略对情绪支持型回复的影响
-- 识别自残、自杀倾向等高风险信号
-- 通过异常提醒而非暴露完整内容的方式实现隐私友好的升级机制
+- 心理咨询成本较高，短期内不一定能够持续获得帮助
+- 用户未必愿意立刻向他人暴露自己的情绪状态
+- 一些负面情绪并不总是需要“正式治疗”，但仍然需要被接住、被回应
+- 用户在深夜、压力高峰或独处时，更需要一种低门槛的支持入口
+
+基于以上痛点，本项目尝试以 **Human-Centered AI** 的方式，设计一个更具陪伴性、支持性与安全意识的情绪支持 Agent。
 
 ---
 
-## Key Features | 核心功能
+## 产品目标
 
-- Multi-turn emotional support dialogue
-- Context-aware conversation memory
-- Knowledge-enhanced supportive response generation
-- Emotionally aligned persona and tone control
-- Safety trigger and escalation logic
-- Privacy-aware abnormal risk alerting
+本项目的目标不是替代专业心理医生，而是探索一个 **支持性、陪伴性、具有安全机制的 AI 原型系统**，帮助用户：
 
-- 多轮情感支持对话
-- 上下文感知与对话记忆
-- 知识增强的支持型回复生成
-- Persona 与语气控制
-- 安全触发与升级逻辑
-- 隐私友好的异常风险提醒
+- 在私密场景中表达情绪
+- 获得更温和、支持性的回应
+- 降低“开口倾诉”的心理门槛
+- 在识别到潜在风险信号时获得提示与引导
+- 体验一种更自然的人机情绪交互方式
 
 ---
 
-## Safety Design | 安全机制设计
+## 核心功能设计
 
-This project is not a diagnostic or treatment tool.
+### 1. 支持性对话（Supportive Dialogue）
+用户可以通过自然语言输入自己的情绪、压力、烦恼或困惑，系统将基于对话语境给出更具共情感和支持性的回应。
 
-When the system detects possible signals of self-harm, suicide intent, or emotional crisis, it shifts from regular supportive conversation to a safer response mode. This includes:
-- emotionally stabilizing responses
-- stronger encouragement to seek human help
-- warning prompts for crisis situations
-- backend anomaly alerts without exposing the full conversation by default
+### 2. 情绪表达与记录（Emotional Expression）
+系统支持用户以自由对话的方式表达内心状态，而不仅仅是选择固定标签，从而更贴近真实情绪场景。
 
-本项目不是诊断工具，也不是治疗工具。
+### 3. 情绪趋势观察（Mood Reflection）
+通过持续对话与记录，帮助用户回顾自己的情绪变化与触发因素，形成更清晰的自我觉察。
 
-当系统检测到可能涉及自残、自杀倾向或严重情绪危机的表达时，它会从普通支持型对话切换到更安全的响应模式，包括：
-- 更稳定情绪的回应方式
-- 更明确地建议寻求人类帮助
-- 面向危机情境的警示提示
-- 默认不上传完整聊天内容，而仅发送异常风险提示到后台系统
+### 4. 风险信号识别（Risk Signal Detection）
+当用户输入中出现潜在自伤、自杀、极端绝望等高风险表达时，系统将触发安全机制，并进行异常提示。
 
----
-
-## Tech Stack | 技术栈
-
-- Python
-- LangChain
-- RAG
-- Prompt Engineering
-- Persona Design
-- Next.js
-- Tailwind CSS
-- Supabase
+### 5. 安全提示机制（Safety-Aware Intervention）
+系统在检测到高风险信号时，不展示具体隐私内容，而是基于预设逻辑进行异常提醒、用户警告与进一步引导。
 
 ---
 
-## My Role | 我的角色
+## AI Agent 设计思路
 
-- Product concept definition
-- User pain point framing
-- Emotional interaction design
-- Prompt and persona strategy design
-- Dialogue flow design
-- Safety escalation logic
-- Prototype testing and iteration
+从产品设计角度来看，这个项目不仅仅是一个聊天机器人，而是一个更接近 **AI Emotional Support Agent** 的系统原型。它的设计重点包括：
 
-- 产品概念定义
-- 用户痛点分析
-- 情感交互设计
-- Prompt 与 Persona 策略设计
-- 对话流程设计
-- 安全升级逻辑设计
-- 原型测试与迭代优化
+- **对话式交互**：以自然语言为核心入口，而不是表单式填写
+- **情绪支持**：回应不只提供信息，更强调情感陪伴与共情表达
+- **风险意识**：系统具备基础的安全边界与风险识别逻辑
+- **隐私导向**：在支持用户表达的同时，尽量减少羞耻感与暴露压力
+- **人本视角**：强调技术服务于真实用户的情绪体验，而不是单纯追求功能堆叠
 
 ---
 
+## 适用场景
+
+这个产品原型适合用于探索以下场景：
+
+- 用户情绪低落、焦虑、压力较大时的即时倾诉入口
+- 夜间或独处场景下的低门槛支持
+- 面向年轻用户的情绪表达与陪伴型 AI 交互
+- Human-AI Emotional Interaction / HCI / AI Product 方向的研究与作品集展示
+
+---
+
+## 技术方向（Prototype Level）
+
+本项目目前主要作为一个 AI 产品原型进行展示，技术方向包括但不限于：
+
+- **LLM（大语言模型）**
+- **Supportive Dialogue Design**
+- **Risk Signal Detection**
+- **Safety Layer / Guardrail**
+- **RAG（可扩展心理健康知识库）**
+- **Memory / Contextual Conversation**
+- **Next.js + React + Tailwind CSS**
+
+---
+
+## 产品结构示意
+
+本项目可以进一步扩展为以下模块：
+
+1. **用户输入层**  
+   用户通过聊天界面输入情绪、困扰或问题。
+
+2. **对话生成层**  
+   基于大语言模型生成支持性回应。
+
+3. **情绪与风险识别层**  
+   对用户输入进行情绪分析与潜在风险判断。
+
+4. **安全机制层**  
+   当识别到高风险内容时触发提醒、警告或进一步引导。
+
+5. **知识增强层（可选）**  
+   结合心理健康知识库、求助资源或常见支持策略提供更稳健的输出。
+
+---
+
+## 我的工作
+
+在这个项目中，我重点关注的是：
+
+- AI 产品概念设计
+- 情绪支持场景定义
+- 用户痛点与使用场景分析
+- 对话式体验与交互逻辑设计
+- 风险检测与安全机制思考
+- 原型展示与作品集包装
+
+---
+
+## Prototype / Demo
+
+### Figma Prototype
+可在此放入你的 Figma 链接：
+
+[点击查看 Figma Prototype](在这里替换成你的 Figma 链接)
+
+### Demo Preview
+你也可以在这里放：
+
+- 首页截图
+- 聊天界面截图
+- 风险提示流程图
+- 用户旅程图
+- 对话流程示意图
+
+---
+
+## 项目展示建议
+
+如果你将本项目作为作品集展示，建议同时包含以下内容：
+
+- README 项目说明
+- Figma 高保真原型
+- Conversation Flow
+- Safety Mechanism
+- AI Architecture Diagram
+- Demo 截图或录屏
+
+这样可以更完整地体现你在 **AI Product / HCI / Human-Centered Design / AI Agent** 方向的能力。
+
+---
+
+## 项目状态
+
+当前版本为产品原型 / 作品集展示版本，重点在于：
+
+- 探索 AI 在情绪支持场景中的产品可能性
+- 展示 Human-Centered AI 的设计思考
+- 搭建一个可持续扩展的 AI Agent 项目框架
+
+后续可以继续迭代的方向包括：
+
+- 接入真实 LLM API
+- 增加聊天记忆与用户画像
+- 接入情绪分类模型
+- 增加危机干预与求助资源推荐
+- 构建心理支持知识库（RAG）
+- 优化移动端聊天体验
+
+---
+
+## 项目来源说明
+
+本项目基于开源项目的前端结构进行二次开发与扩展。  
+原项目提供了基础的界面框架与前端实现，我在此基础上重新定义了产品问题、目标用户、交互场景与 AI Agent 方向，并将其扩展为一个面向情绪支持场景的产品原型。
+
+本仓库当前更侧重于展示我在以下方面的思考与能力：
+
+- AI 产品设计
+- 情绪交互场景建构
+- 支持性对话逻辑
+- 风险识别与安全机制
+- Human-Centered AI / HCI 方向的原型表达
+
+---
